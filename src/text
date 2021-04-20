@@ -1,0 +1,55 @@
+
+        const todasNotas = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']
+        console.log(todasNotas);
+
+        //Ionian
+        //let initialValue = 0
+        //let pattern: number[] = [0, 2, 2, 1, 2, 2, 2, 1]
+        //let harmonic = ['', 'm', 'm', '', '', 'm', 'dim']
+
+        //Dorian
+        //let initialValue = 11
+        //let pattern: number[] = [0, 2, 1, 2, 2, 2, 1, 2]
+        //let harmonic = ['m', 'm', '', '', 'm', 'dim', '']
+
+        //Phrygian
+        //let initialValue = 11
+        //let pattern: number[] = [0, 1, 2, 2, 2, 1, 2, 2]
+        //let harmonic = ['m', '', '', 'm', 'dim', '', 'm']
+
+        //Lydian
+        //let initialValue = 11
+        //let pattern: number[] = [0, 2, 2, 2, 1, 2, 2, 1]
+        //let harmonic = ['', '', 'm', 'dim', '', 'm', 'm']
+
+        //Mixolydian
+        //let initialValue = 11
+        //let pattern: number[] = [0, 2, 2, 1, 2, 2, 1, 2]
+        //let harmonic = ['', 'm', 'dim', '', 'm', 'm', '']
+
+        //Aeolian
+        //let initialValue = 11
+        //let pattern: number[] = [0, 2, 1, 2, 2, 1, 2, 2]
+        //let harmonic = ['m', 'dim', '', 'm', 'm', '', '']
+
+        //Locrian
+        let initialValue = 11
+        let pattern: number[] = [0, 1, 2, 2, 1, 2, 2, 2]
+        let harmonic = ['dim', '', 'm', 'm', '', '', 'm']
+
+        pattern = pattern.map(nummer => {
+            return initialValue = initialValue + nummer
+        })
+
+        console.log(pattern);
+
+        let ionian = pattern.map(nummer => {
+            return todasNotas.filter((note, index) => index == nummer)[0]
+        })
+
+        ionian = ionian.map((note, indexNote) => {
+            return note + harmonic[indexNote]
+        })
+
+        console.log('The scale is...');
+        console.log(ionian);
